@@ -3,21 +3,21 @@
 import { useState, useEffect } from 'react';
 import getDataFromApi from '../services/api';
 import '../styles/App.css';
+import CharacterList from './CharacterList';
 
 // FUNCIÓN DEL COMPONENTE
 
 function App() {
   // SECCIÓN DE VARIABLES DE ESTADO
 
-  const [charList, setCharList] = useState([]);
+  const [characterList, setCharacterList] = useState([]);
 
   // SECCIÓN DE CÓDIGO CUANDO CARGA LA PÁGINA
 
   useEffect(() => {
   
     getDataFromApi().then((cleanData) => {
-      setCharList(cleanData);
-      console.log(cleanData);
+      setCharacterList(cleanData);
     });
 
   }, []);
@@ -31,15 +31,11 @@ function App() {
       </header>
       <main className='main'>
         <form className='filters'>
-          <h2 className='filters__title title--medium'>Filtrar por...</h2>
+          <h2 className='filters__title'>Filtrar por...</h2>
         </form>
-        <section className='contacts'>
-          <h2 className='contacts__title title--medium'>Lista de personajes</h2>
-          <ul className='cards'>
-            <li className='card'></li>
-            <li className='card'></li>
-            <li className='card'></li>
-          </ul>
+        <section className='characters'>
+          <h2 className='characters_title'>Lista de personajes</h2>
+          <CharacterList characterList={characterList} />
         </section>
       </main>
     </div>

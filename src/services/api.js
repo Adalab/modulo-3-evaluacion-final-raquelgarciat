@@ -6,7 +6,7 @@ const getDataFromApi = () => {
         return {
             id: objectAPI.id,
             name: objectAPI.name,
-            picture: objectAPI.image,
+            image: objectAPI.image,
             status: objectAPI.status,
             species: objectAPI.species,
             episodes: objectAPI.episode.length,
