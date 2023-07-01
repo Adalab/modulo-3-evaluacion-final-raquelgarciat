@@ -10,7 +10,7 @@ const getDataFromApi = () => {
           status: objectAPI.status,
           species: objectAPI.species,
           episodes: objectAPI.episode.length,
-          planet: objectAPI.location.name,
+          planet: objectAPI.origin.name,
         };
       });
 

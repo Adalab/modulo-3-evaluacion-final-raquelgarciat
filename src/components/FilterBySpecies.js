@@ -7,7 +7,7 @@ function FilterBySpecies( {searchBySpecies, handleFilter} ) {
       <label className='form_label' htmlFor='search_species'>
         Species:
         <input
-          className='form_input-text'
+          className='form_input'
           type='text'
           name='search_species'
           id='search_species'

@@ -5,9 +5,9 @@ function FilterByName( {searchByName, handleFilter} ) {
   
     return (
       <label className='form_label' htmlFor='search_name'>
-        Nombre:
+        Name:
         <input
-          className='form_input-text'
+          className='form_input'
           type='text'
           name='search_name'
           id='search_name'

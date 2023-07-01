@@ -1,17 +1,26 @@
 // IMPORTS
 
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { useLocation, matchPath } from 'react-router';
+
 import getDataFromApi from '../services/api';
+
 import '../styles/main.scss';
-import CharacterList from './CharacterList';
+
 import logo from '../images/logo.png';
+
+import CharacterList from './CharacterList';
 import Filters from './Filters';
+import CharacterDetail from './CharacterDetail';
 
 // FUNCIÓN DEL COMPONENTE
 
 function App() {
   // SECCIÓN DE VARIABLES DE ESTADO
   const [characterList, setCharacterList] = useState([]);
+  const [searchByName, setSearchByName] = useState('');
+  const [searchBySpecies, setSearchBySpecies] = useState('');
 
   // SECCIÓN DE CÓDIGO CUANDO CARGA LA PÁGINA
   useEffect(() => {
@@ -21,9 +30,6 @@ function App() {
   }, []);
 
   // SECCIÓN DE HANDLERS/EVENTOS
-  const [searchByName, setSearchByName] = useState('');
-  const [searchBySpecies, setSearchBySpecies] = useState('');
-
   const handleFilter = (varName, varValue) => {
     if (varName === 'name') {
       setSearchByName(varValue);
@@ -44,6 +50,17 @@ function App() {
     );
   const species = characterList.map((eachCharacter) => eachCharacter.species);
 
+  // OBTENER LA INFORMACIÓN DEL CONTACTO
+  const { pathname } = useLocation();
+
+  const routeData = matchPath('/character/:characterId', pathname);
+
+  const characterId = routeData !== null ? routeData.params.characterId : null;
+  
+  const characterData = characterList.find(
+    (character) => character.id === parseInt(characterId)
+  );
+
   // SECCION HTML
   return (
     <div className='page'>
@@ -51,16 +68,30 @@ function App() {
         <img src={logo} alt='logo' className='header_logo' />
       </header>
       <main className='main'>
-        <Filters
-          searchByName={searchByName}
-          searchBySpecies={searchBySpecies}
-          handleFilter={handleFilter}
-          species={species}
-        />
-        <section className='charlist'>
-          <h2 className='charlist_title'>Lista de personajes</h2>
-          <CharacterList characterList={filteredCharacters} />
-        </section>
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <>
+                <Filters
+                  searchByName={searchByName}
+                  searchBySpecies={searchBySpecies}
+                  handleFilter={handleFilter}
+                  species={species}
+                />
+                <section className='charlist'>
+                  <h2 className='charlist_title'>Lista de personajes</h2>
+                  <CharacterList characterList={filteredCharacters} />
+                </section>
+              </>
+            }
+          />
+          <Route
+            path='/character/:characterId'
+            element={<CharacterDetail characterData={characterData} />}
+          />
+          <Route path="*" element={<h2>Error 404: page not found</h2>} />
+        </Routes>
       </main>
     </div>
   );

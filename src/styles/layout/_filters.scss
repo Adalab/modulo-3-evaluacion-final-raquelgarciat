@@ -1,0 +1,28 @@
+.filters {
+    margin: 0px 0px 20px 20px;
+    &_title{
+        color: $lightgrey;
+        font-family: $font-hand;
+        margin-bottom: 10px;
+    }
+    &_inputs{
+        display: flex;
+        gap: 20px;
+    }
+}
+
+.form_label{
+    font-family: $font-text;
+    font-size: 28px;
+    color: $lightgrey;
+}
+
+.form_input{
+    font-family: $font-hand;
+    font-size: 20px;
+    color: $darkgrey;
+    margin-left: 10px;
+    border-radius: 10px;
+    border: 3px solid $blue;
+    padding-left: 5px;
+}
