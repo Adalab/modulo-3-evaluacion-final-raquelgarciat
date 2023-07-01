@@ -1,0 +1,12 @@
+@import 'core/reset';
+@import 'core/var';
+
+@import 'layout/header';
+@import 'layout/characterlist';
+
+.page {
+    background-color: #010001;
+    background-image: url('../images/bg.png');
+    background-position: top;
+    background-repeat: no-repeat;
+}
