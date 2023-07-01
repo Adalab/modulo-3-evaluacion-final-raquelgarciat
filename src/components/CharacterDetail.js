@@ -14,19 +14,27 @@ function CharacterDetail({ characterData }) {
             <h2 className='card_title'>{characterData.name}</h2>
             <ul className='card_data'>
               <li className='card_data-li'>
-                <span className='datatitle'>Status:</span>{' '}
-                {characterData.status}
+                <span className='datatitle'>Status: </span>
+                {characterData.status === 'Alive' ? (
+                  <i class='fa-solid fa-heart'></i>
+                ) : (
+                  <i class='fa-solid fa-skull-crossbones'></i>
+                )}
               </li>
               <li className='card_data-li'>
-                <span className='datatitle'>Species:</span>{' '}
-                {characterData.species}
+                <span className='datatitle'>Species: </span>
+                {characterData.species === 'Human' ? (
+                  <i class='fa-solid fa-person'></i>
+                ) : (
+                  <i class='fa-brands fa-reddit-alien'></i>
+                )}
               </li>
               <li className='card_data-li'>
-                <span className='datatitle'>Origin:</span>{' '}
+                <span className='datatitle'>Origin: </span>
                 {characterData.planet}
               </li>
               <li className='card_data-li'>
-                <span className='datatitle'>Episodes:</span>{' '}
+                <span className='datatitle'>Episodes: </span>
                 {characterData.episodes}
               </li>
             </ul>
