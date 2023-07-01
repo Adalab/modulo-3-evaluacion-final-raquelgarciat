@@ -8,12 +8,14 @@
 
 :root {
   background-color: #010001;
-}
-
-.page {
   background-color: #010001;
   background-image: url('../images/bg.png');
   background-position: top;
-  background-repeat: no-repeat;
+  background-repeat: repeat-x;
   height: 100%;
+}
+
+.page {
+  max-width: 1600px;
+  margin: auto;
 }
