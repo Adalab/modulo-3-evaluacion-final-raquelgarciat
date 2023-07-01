@@ -1,0 +1,69 @@
+.detail {
+  &_back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: $font-hand;
+    color: $lightgrey;
+    text-decoration: none;
+    font-size: 22px;
+    &:hover {
+      color: $slimegreen;
+    }
+  }
+  &_errormsg {
+    font-family: $font-text;
+    color: $slimegreen;
+    text-align: center;
+    font-size: 26px;
+    margin-top: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: $slimegreen;
+  border: 3px solid $darkblue;
+  gap: 10px;
+  padding: 20px;
+  margin: 0 40px;
+  border-radius: 20px;
+  &_image {
+    height: 250px;
+    border-radius: 20px;
+    border: 3px solid $darkblue;
+    align-self: center;
+  }
+  &_title {
+    font-family: $font-hand;
+    font-size: 24px;
+    text-align: center;
+  }
+  &_data {
+    list-style: none;
+    font-family: $font-text;
+    font-size: 24px;
+    & .datatitle {
+      font-weight: 600;
+      color: $darkblue;
+      font-size: 26px;
+    }
+  }
+}
+
+.errormsg {
+    font-family: $font-text;
+    color: $slimegreen;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 15px;
+}

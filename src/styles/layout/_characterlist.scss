@@ -1,44 +1,46 @@
 .charlist {
-    padding: 20px;
-    font-family: $font-hand;
-    
-    &_title {
-        font-size: 26px;
-        color: $lightgrey;
+  padding: 0 20px;
+  font-family: $font-hand;
+
+  &_title {
+    font-size: 20px;
+    color: $lightgrey;
+  }
+  &_cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    list-style: none;
+    margin: 15px;
+    color: $black;
+  }
+  &_card {
+    margin: 12px;
+    background-color: $slimegreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    a {
+      text-decoration: none;
     }
-    &_cards {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
-        list-style: none;
-        margin: 15px;
-        color: $black;
+    &-img {
+      width: 100%;
+      border-radius: 20px 20px 0 0;
     }
-    &_card {
-        margin: 7px;
-        padding: 8px;
-        background-color: $slimegreen;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border: 3px solid $darkgrey;
-        border-radius: 20px;
-        &-img {
-            height: 125px;
-            border-radius: 50%;
-        }
-        &-name {
-            font-size: 18px;
-            text-align: center;
-            color: $darkblue;
-            text-decoration: none;
-        }
-        &-species {
-            font-family: $font-text;
-            font-size: 22px;
-            color: $darkgrey;
-        }
+    &-name {
+      font-size: 16px;
+      color: $darkblue;
+      text-decoration: none;
     }
-    
+    &-species {
+      font-family: $font-text;
+      font-size: 22px;
+      color: $darkgrey;
+      text-decoration: none;
+      margin-bottom: 5px;
+    }
+  }
 }

@@ -4,11 +4,16 @@
 @import 'layout/header';
 @import 'layout/filters';
 @import 'layout/characterlist';
+@import 'layout/characterdetail';
+
+:root {
+  background-color: #010001;
+}
 
 .page {
-    background-color: #010001;
-    background-image: url('../images/bg.png');
-    background-position: top;
-    background-repeat: no-repeat;
-    height: 100vh;
+  background-color: #010001;
+  background-image: url('../images/bg.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  height: 100%;
 }

@@ -1,7 +1,7 @@
 // IMPORTS
 
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import { useLocation, matchPath } from 'react-router';
 
 import getDataFromApi from '../services/api';
@@ -56,7 +56,7 @@ function App() {
   const routeData = matchPath('/character/:characterId', pathname);
 
   const characterId = routeData !== null ? routeData.params.characterId : null;
-  
+
   const characterData = characterList.find(
     (character) => character.id === parseInt(characterId)
   );
@@ -80,7 +80,6 @@ function App() {
                   species={species}
                 />
                 <section className='charlist'>
-                  <h2 className='charlist_title'>Lista de personajes</h2>
                   <CharacterList characterList={filteredCharacters} />
                 </section>
               </>
@@ -90,7 +89,19 @@ function App() {
             path='/character/:characterId'
             element={<CharacterDetail characterData={characterData} />}
           />
-          <Route path="*" element={<h2>Error 404: page not found</h2>} />
+          <Route
+            path='*'
+            element={
+              <div>
+              <h2 className='errormsg'>
+                <i className="fa-solid fa-skull-crossbones"></i> Error 404: page not
+                found
+              </h2>
+              <Link className='detail_back' to='/'>
+              <i className='fa-solid fa-circle-left'></i> Go back
+            </Link></div>
+            }
+          />
         </Routes>
       </main>
     </div>
