@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import alien from '../images/alien.png';
 
 function CharacterDetail({ characterData }) {
   if (characterData) {
@@ -16,7 +17,7 @@ function CharacterDetail({ characterData }) {
               <li className='card_data-li'>
                 <span className='datatitle'>Status: </span>
                 {characterData.status === 'Alive' ? (
-                  <i class='fa-solid fa-heart'></i>
+                  <i class="fa-solid fa-heart-circle-check"></i>
                 ) : (
                   <i class='fa-solid fa-skull-crossbones'></i>
                 )}
@@ -26,7 +27,7 @@ function CharacterDetail({ characterData }) {
                 {characterData.species === 'Human' ? (
                   <i class='fa-solid fa-person'></i>
                 ) : (
-                  <i class='fa-brands fa-reddit-alien'></i>
+                  <img src={alien} alt='alien' className='detail_alien' />
                 )}
               </li>
               <li className='card_data-li'>

@@ -69,6 +69,11 @@
     margin-bottom: 15px;
 }
 
+.detail_alien {
+  width: 30px;
+  vertical-align: top;
+}
+
 @media screen and (min-width: 768px) {
   .detail {
     &_back {

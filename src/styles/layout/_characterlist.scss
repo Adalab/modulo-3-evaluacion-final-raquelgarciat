@@ -39,6 +39,12 @@
       margin-bottom: 5px;
     }
   }
+  &_error {
+    font-family: $font-text;
+    color: $slimegreen;
+    font-size: 24px;
+    margin: 25px 0 0 35px;
+  }
 }
 
 @media screen and (min-width: 624px) {
@@ -73,6 +79,11 @@
       &-species {
         font-size: 26px;
       }
+    }
+    &_error {
+      text-align: left;
+      font-size: 28px;
+      margin-left: 35px;
     }
   }
 }
