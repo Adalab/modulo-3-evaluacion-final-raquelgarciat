@@ -17,15 +17,15 @@ function CharacterDetail({ characterData }) {
               <li className='card_data-li'>
                 <span className='datatitle'>Status: </span>
                 {characterData.status === 'Alive' ? (
-                  <i class="fa-solid fa-heart-circle-check"></i>
+                  <i className="fa-solid fa-heart-circle-check"></i>
                 ) : (
-                  <i class='fa-solid fa-skull-crossbones'></i>
+                  <i className='fa-solid fa-skull-crossbones'></i>
                 )}
               </li>
               <li className='card_data-li'>
                 <span className='datatitle'>Species: </span>
                 {characterData.species === 'Human' ? (
-                  <i class='fa-solid fa-person'></i>
+                  <i className='fa-solid fa-person'></i>
                 ) : (
                   <img src={alien} alt='alien' className='detail_alien' />
                 )}
