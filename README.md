@@ -3,7 +3,7 @@
 
 Welcome to the Rick & Morty character finder!
 ## Features
-- Filter your characters by name or species
+- Filter the characters by name or species
 - Click on a character to see more info
 - ✨Magic ✨
 
